@@ -17,8 +17,74 @@ const blogSchema = new Schema({
     videoLink: {
         type: String,
         required: true
+    },
+    question1: {
+        type: String,
+        required: true,
+        option1: {
+            type: String,
+            required: true,
+            correctYN: Boolean,
+            helpString: String
+        },
+        option2: {
+            type: String,
+            required: true,
+            correctYN: Boolean,
+            helpString: String
+        },
+        option3: {
+            type: String,
+            required: true,
+            correctYN: Boolean,
+            helpString: String
+        }
+    },
+    question2: {
+        type: String,
+        required: true,
+        option1: {
+            type: String,
+            required: true,
+            correctYN: Boolean,
+            helpString: String
+        },
+        option2: {
+            type: String,
+            required: true,
+            correctYN: Boolean,
+            helpString: String
+        },
+        option3: {
+            type: String,
+            required: true,
+            correctYN: Boolean,
+            helpString: String
+        }
+    },
+    question3: {
+        type: String,
+        required: true,
+        option1: {
+            type: String,
+            required: true,
+            correctYN: Boolean,
+            helpString: String
+        },
+        option2: {
+            type: String,
+            required: true,
+            correctYN: Boolean,
+            helpString: String
+        },
+        option3: {
+            type: String,
+            required: true,
+            correctYN: Boolean,
+            helpString: String
+        }
     }
-    
+
 }, {timestamps: true})
 
 const Blog = mongoose.model('Blog', blogSchema);

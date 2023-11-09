@@ -16,6 +16,40 @@
             
             <label for="videoLink">Video link</label>
             <input type="text" id="videoLink" name="videoLink" required>
+
+            <div class="questionAnswer">
+                <label for="question1">Question1</label>
+                <textarea type="text" id="question1" name="question1" required></textarea>
+                <ol>
+                    <li>
+                        <label for="option1">Option 1</label>
+                        <input type="text" id="option1" name = "question1.option1" required>
+                        
+                        <label for="correctYN">Enter correct Yes or No</label>
+                        <input type="text" id="correctYN" name = "question1.option1.correctYN" required>
+
+                        <label for="helpString">Enter help text</label>
+                        <input type="text" id="helpString" name = "question1.option1.helpString" required>
+
+                    </li>
+                    <li>
+                        <label for="option2">Option 2</label>
+                        <input type="text" id="option2" name = "question1.option2" required>
+                    </li>
+                    <li>
+                        <label for="option3">Option 3</label>
+                        <input type="text" id="option3" name = "question1.option3" required>
+                    </li>
+                </ol>
+            </div>
+
+
+
+                <label for="question2">Question2</label>
+                <textarea type="text" id="question2" name="question2" required></textarea>
+
+                <label for="question3">Question3</label>
+                <textarea type="text" id="question3" name="question3" required></textarea>
             
             <button>Submit</button>
         </form>
