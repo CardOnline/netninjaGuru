@@ -13,7 +13,12 @@ const blogSchema = new Schema({
     body: {
         type: String,
         required: true
+    },
+    videoLink: {
+        type: String,
+        required: true
     }
+    
 }, {timestamps: true})
 
 const Blog = mongoose.model('Blog', blogSchema);
