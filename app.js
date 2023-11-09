@@ -20,6 +20,7 @@ app.listen(3000);
 
 // middleware & static files
 app.use(express.static('public'));
+app.use(express.urlencoded({ extended: true }));
 
 app.use(morgan('dev'));
 
@@ -79,6 +80,42 @@ app.get('/blogs', (req, res) =>{
         .catch((err) =>{
             console.log(err); 
          })
+})
+
+app.post('/blogs', (req,res)=>{
+    console.log(req.body);
+    const blog = new Blog(req.body);
+
+    blog.save()
+        .then((result)=>{
+            res.redirect('/blogs');
+        })
+        .catch((err) =>{
+            console.log(err); 
+         })
+
+})
+
+app.get('/blogs/:id', (req,res)=>{
+    const id = req.params.id;
+    console.log(id);
+    Blog.findById(id)
+        .then((blog) =>{
+            res.render('details', {blog: blog, title: 'Blog Details'});
+        })
+        .catch((err) =>{
+            console.log(err); 
+         })
+})
+
+app.delete('/blogs/:id', (req, res)=>{
+    const id = req.params.id;
+    console.log(id);
+    Blog.findByIdAndDelete(id)
+        .then(result => {
+            res.json({redirect: '/blogs'});
+        })
+        .catch(err => console.log(err));
 })
 
 // blogs create
